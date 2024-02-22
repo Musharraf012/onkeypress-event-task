@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>First Name:</h2>  <input type="text" id="input1" placeholder="firstname" onkeypress="handleinput(event)">
+  <h2>Last Name:</h2>   <input type="text" id="input2" placeholder="lastname" onkeypress="handleinput(event)">
+  <h2>Mobile Number:</h2> <input type="number" id="input3" placeholder="mobilenumber" onkeypress="handleinput1(event)" >
+  <h2>Zip Code:</h2> <input type="number" id="input4" placeholder="zip code" onkeypress="handleinput2(event)">
+    <script>
+        function handleinput(e){
+            if (e.key >="A" && e.key <="Z" || e.key >="a" && e.key <="z"){
+                e.returnValue = true
+            }
+            else{
+                e.returnValue = false
+            }
+        }
+        function handleinput1(e){
+            let inp3 =document.getElementById("input3").value
+            
+            if ((e.key>=0 && e.key<=9 || e.key == "+"  ) && inp3.length<12 ){
+                e.returnValue=  true
+            }
+            else{
+                e.returnValue=false
+            }
+        }
+
+        function handleinput2(e){
+            let inp4 =document.getElementById("input4").value
+            
+            if ( inp4.length<6 ){
+                e.returnValue=true
+            }
+            else{
+                e.returnValue=false
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
